@@ -1,8 +1,10 @@
-import node modules
+#import node modules
 
-install dependencies in package.json file
+install dependencies in package.json file by using command npm install
 
 to run the program type nodemon app.js in terminal
+program runs on local host at port 8000
+use http://localhost:8000 to run the program
 
 
 **detials of the mail account which sends emails to host and guest:**
