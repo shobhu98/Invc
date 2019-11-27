@@ -3,11 +3,27 @@ let app = express();
 app.set('view engine', 'ejs');
 let path=require('path');
 let nodemailer=require('nodemailer');
+// let twilio=require('twilio');
 
+const accountSid = 'AC973e8decd35333060224d07568f3e4e6';
+const authToken = 'ce0a17c21503a4e8a2185e6965b00ced';
+const client = require('twilio')(accountSid, authToken);
+
+// client.messages
+//     .create({
+//         body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
+//         from: '+19543728578',
+//         to: '+918920862975'
+//     })
+//     .then(message => console.log(message.sid));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static( 'public'));
+
+
+
+
 
 let transporter = nodemailer.createTransport({
   service: 'Gmail',
@@ -36,8 +52,8 @@ app.get('/welcome',function (req,res,next) {
    nam=req.query.name;
    num=req.query.num;
    email_host=req.query.email_host;
- let  num_host=req.query.num_host;
- let  name_host=req.query.name_host;
+   num_host=req.query.num_host;
+   name_host=req.query.name_host;
     // console.log(email);
 
 
@@ -63,8 +79,8 @@ let maillist=[email_host];
   let mailOptions = {
     from: 'shobhit978tiwari@gmail.com',
     to: maillist,
-    subject: 'Sending Email using Node.js',
-    text:"Email: "+ email_str+ " Name:"+name_str+" Number"+num_str+"In Time:"+time_in,
+    subject: 'New Visitor Details',
+    text:"Email_id: "+ email_str+ "\n Name: "+name_str+"\n Number: "+num_str+"\nIn Time: "+time_in,
   };
   transporter.sendMail(mailOptions, function(error, info){
     if (error) {
@@ -74,21 +90,44 @@ let maillist=[email_host];
     }
   });
 
-next();
+    // client.messages
+    //     .create({
+    //         body: "Email_id: "+ email_str+ "\n Name: "+name_str+"\n Number: "+num_str+"\nIn Time: "+time_in,
+    //         from: '+19543728578',
+    //         to: '+91'+num_host
+    //     })
+    //     .then(message => console.log(message.sid));
+
+
+
+
+
+    next();
 
 });
 
 
-app.get('/thankyou',function (req,res) {
+app.get('/thankyou',function (req,res,next) {
   // console.log(email_host+num_host);
   let today = new Date();
   time_out = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
   let mailOptions = {
     from: 'shobhit978tiwari@gmail.com',
     to: email,
-    subject: 'Sending you mail',
-    text:"Email: "+ email_str+ " Name:"+name_str+" Number"+num_str+"Time In"+time_in+"Time Out"+time_out,
+    subject: 'Thanks For visiting Mr/Ms '+name_host+" at Inovaccer.",
+    text:"Email: "+ email_str+ "\nName: "+name_str+"\nNumber "+num_str+"\nTime In "+time_in+"\nTime Out "+time_out,
   };
+         console.log(num);
+         console.log(typeof (num));
+    client.messages
+        .create({
+            body: 'Thanks For visiting Mr/Ms '+name_host+" at Inovaccer.\n"+"Email: "+ email_str+ "\nName: "+name_str+"\nNumber "+num_str+"\nTime In "+time_in+"\nTime Out "+time_out,
+            from: '+19543728578',
+            to: '+91'+num
+        })
+        .then(message => console.log(message.sid));
+
+
   transporter.sendMail(mailOptions, function(error, info){
     if (error) {
       console.log(error);
@@ -96,6 +135,10 @@ app.get('/thankyou',function (req,res) {
       console.log('Email sent: ' + info.response);
     }
   });
+
+
+
+
   console.log(email_host);
   res.sendFile(path.join(__dirname + '/Thankyou.html'));
 

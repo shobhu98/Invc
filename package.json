@@ -10,10 +10,14 @@
     "debug": "~2.6.9",
     "ejs": "^3.0.1",
     "express": "~4.16.1",
+    "free-mobile-sms-api": "^1.0.4",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
+    "nexmo": "^2.5.1",
     "nodemailer": "^4.7.0",
     "nodemon": "^2.0.1",
-    "pug": "^2.0.4"
+    "pug": "^2.0.4",
+    "textmagic-rest-client": "^1.0.10",
+    "twilio": "^3.37.1"
   }
 }
