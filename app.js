@@ -28,8 +28,8 @@ app.use(express.static( 'public'));
 let transporter = nodemailer.createTransport({
   service: 'Gmail',
   auth: {
-    user: 'shobhit978tiwari@gmail.com',
-    pass: 'iama98boy'
+    user: 'anant95sharma@gmail.com',
+    pass: 'hello@123'
   }
 });
 
@@ -49,6 +49,7 @@ app.get('/',function (req,res,next) {
  global.email_host;
 app.get('/welcome',function (req,res,next) {
     email=req.query.email;
+    console.log(email);
    nam=req.query.name;
    num=req.query.num;
    email_host=req.query.email_host;
@@ -77,7 +78,7 @@ app.get('/welcome',function (req,res,next) {
 let maillist=[email_host];
 
   let mailOptions = {
-    from: 'shobhit978tiwari@gmail.com',
+    from: 'anant95sharma@gmail.com',
     to: maillist,
     subject: 'New Visitor Details',
     text:"Email_id: "+ email_str+ "\n Name: "+name_str+"\n Number: "+num_str+"\nIn Time: "+time_in,
@@ -112,7 +113,7 @@ app.get('/thankyou',function (req,res,next) {
   let today = new Date();
   time_out = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
   let mailOptions = {
-    from: 'shobhit978tiwari@gmail.com',
+    from: 'anant95sharma@gmail.com',
     to: email,
     subject: 'Thanks For visiting Mr/Ms '+name_host+" at Inovaccer.",
     text:"Email: "+ email_str+ "\nName: "+name_str+"\nNumber "+num_str+"\nTime In "+time_in+"\nTime Out "+time_out,
