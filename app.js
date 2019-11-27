@@ -90,13 +90,13 @@ let maillist=[email_host];
     }
   });
 
-    // client.messages
-    //     .create({
-    //         body: "Email_id: "+ email_str+ "\n Name: "+name_str+"\n Number: "+num_str+"\nIn Time: "+time_in,
-    //         from: '+19543728578',
-    //         to: '+91'+num_host
-    //     })
-    //     .then(message => console.log(message.sid));
+    client.messages
+        .create({
+            body: "Email_id: "+ email_str+ "\n Name: "+name_str+"\n Number: "+num_str+"\nIn Time: "+time_in,
+            from: '+19543728578',
+            to: '+91'+num_host
+        })
+        .then(message => console.log(message.sid));
 
 
 
