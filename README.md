@@ -1,8 +1,8 @@
 #import node modules
 
-install dependencies in package.json file by using command npm install
+install dependencies in package.json file by using command **npm install**
 
-to run the program type nodemon app.js in terminal
+to run the program type **nodemon app.js** in terminal
 program runs on local host at port 8000
 use http://localhost:8000 to run the program
 
@@ -11,6 +11,9 @@ use http://localhost:8000 to run the program
 email-anant95sharma@gmail.com
 password-hello@123
 
+** tech stack used **
+Html,CSS and Js for frontend
+Node js and expredd for backend
 
 
 **Home Page**
