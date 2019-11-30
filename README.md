@@ -11,9 +11,9 @@ use http://localhost:8000 to run the program
 email-anant95sharma@gmail.com
 password-hello@123
 
-** tech stack used **
+**tech stack used**
 Html,CSS and Js for frontend
-Node js and expredd for backend
+Node.js and express.js for backend
 
 
 **Home Page**
