@@ -35,11 +35,6 @@ use http://localhost:8000 to run the program
 email-anant95sharma@gmail.com
 password-hello@123
 
-It uses nexmo api  to send sms.
-
-**tech stack used**
-Html,CSS and Js for frontend
-Node.js and express.js for backend
 
 
 **Home Page**
