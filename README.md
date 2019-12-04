@@ -37,13 +37,13 @@ password-hello@123  <br/>
 
 
 
-**Home Page**
+# **Home Page**
 ![alt text](https://github.com/shobhu98/Invc/blob/master/home.JPG)
 
 
-**Visitor Details**
+# **Visitor Details**
 ![alt_text](https://github.com/shobhu98/Invc/blob/master/visitor%20details.JPG)
 
 
-**Thank you page**
+# **Thank you page**
 ![alt_text](https://github.com/shobhu98/Invc/blob/master/thankyou.JPG)
