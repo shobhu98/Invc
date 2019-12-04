@@ -1,7 +1,7 @@
 
 **ENTRY MANAGEMENT SYSTEM**
 PROBLEM STATEMENT
-Given the visitors that we have in office and outside, there is a need to for an entry management software.
+Given the visitors that we have in office and outside, there is a need to for an entry management software.<br/>
 
 **PRODUCT OVERVIEW**
 Entry management system software can be used to track the number of visitors and keeping a record of the usage and the purpose of their visit in a simple and hassle free way.  
